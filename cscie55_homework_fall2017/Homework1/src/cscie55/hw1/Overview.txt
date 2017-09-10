@@ -1,0 +1,64 @@
+/**
+ * Overview - A text file describing your solution.
+ * Created on September 9, 2017
+ *
+ *
+ * This does not need to be a 20 page design document but
+ * should include a description of how you solved the homework,
+ * any assumptions you made in the design, the classes that you created,
+ * and how to execute your solution.
+ *
+ * If for some reason you are submitting an incomplete solution please explain
+ * what is missing or doesn't work in the submission.
+ *
+ *
+ * @author: Todd Lim
+ * @version: 1.0
+ */
+
+QUESTION: How did you solve the homework?
+ANSWER: I began by creating the fields and methods outlined in the assignment. Once I had all the requirements laid out
+somewhere on my Java file, I began trial-and-error for creating methods. Ultimately, I had 4 additional methods that
+probably could have been cut down to 2, 1, or even 0 (e.g. floorSnapshot definitely could've been integrated in another
+method), but I just didn't have time to figure out a cleaner solution. Anyway, my output was very close to the expected
+output. I will describe the Elevator and ElevatorTest classes shortly.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: I assumed that passengers would always need to be plural, so 1 passenger shows as "1 passengers".
+I also assumed in the toString() method that floors and passengers would always use %d (decimal integer) for its values.
+Finally, I assumed that when the elevator went down (or back up for that matter), there would be no passengers to board.
+
+QUESTION: Describe the classes that you created.
+ANSWER: For the Elevator class:
+First, the currentFloor is assigned a value of 0, which is the 'ground floor.' Then, you'll use the boardPassengers()
+method and pass int values for destinationFloor as the parameter. Next, the int values are stored in the
+destinationRequests array, which is incremented each time a passengers onboards and requests a specific floor (vice
+versa for disembarking passengers, which would be decrementing). When the Elevator reaches a floor where a passenger
+needs to disembark, the move() method calls the stop() method to disembark the passenger and print the toString();
+otherwise, the floorSnapshot() method will be called, and it will print the information for floors that did not use
+stopElevator() method using the toString() method; unfortunately, there were duplicates for floors 1 and 7. Then,
+the move() method continues its logic of incrementing or decrementing the current floor; if it hits the minimum or
+maximum floor, it will change direction.
+
+For the ElevatorTest class:
+First, I had to reinsert the totalFloors field, which was assigned a value of 7. Then, I created the main() method,
+using String [] args as the parameter. Next, I created an instance of Elevator called myElevator, which was used to
+create the queries for the boardPassenger() method. This would then use the toString() method to print the information,
+and finally iterate the number of times the elevator completed a full cycle of either going up or down all floors.
+
+QUESTION: How do you execute the solution?
+ANSWER: You can execute the solution by first compiling the two java files, and then running it on a java virtual
+machine (JVM). To do this, first go to your parent directory in the terminal. Now, execute the following commands:
+
+javac cscie55/hw1/*.java (this compiles all java files in the cscie55.hw1 package)
+java -cp . cscie55.hw1.ElevatorTest (this creates a classpath to run the ElevatorTest)
+
+However, if you are using just a jar file, then run this command:
+
+java -jar cscie55.hw1.jar
+
+QUESTION: Please explain what is missing or doesn't work in the submission.
+ANSWER: After much trial and error, I was not able to deduplicate the information from the toString() method for floors
+1 and 7. Rather than trying to debug for another 5 hours and possibly destroying what I already had (I already had to
+revert to a backup from this endeavor), I decided to keep my code (since it was already concise) and focus on
+readability for the graders. Perhaps, they can offer me a solution to this problem much easier than I.
