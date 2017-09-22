@@ -1,0 +1,94 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+25 September 2017
+
+HW2
+Overview - A text file describing your solution.
+
+Instructions:
+This does not need to be a 20 page design document but should include a description of how you solved the homework,
+any assumptions you made in the design, the classes that you created, and how to execute your solution. If for
+some reason you are submitting an incomplete solution please explain what is missing or doesn't work in the submission.
+
+
+***Responses***
+
+QUESTION: How did you solve the homework?
+ANSWER: I used the lessons I learned from Homework 1 to rebuild Homework 2 from the ground up. First, I read through
+the requirements and integrated the required constructors, methods, and fields into the new classes. I also had to
+watch tutorials to figure out how to get jUnit set up--it seems to be working but for some reason I also have Android
+tests with the same code, so I'm not sure what happened when I set it up in IntelliJ. Adding the new instance variables
+and methods in the new classes was also challenging, which is why I needed to scratch Homework 1 because that was just
+a mess--it was not meant to scale. Implementing the try-catch blocks for exception handling was not too bad, as I just
+used a while loop in the elevatorStop method in the Elevator class. The classes will be discussed shortly.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: Per the instructions, we are supposed to assume in the floor class instructions "that passengers waiting for
+the Elevator on floors 2 and above should all be boarded as going to the first floor. (We'll drop this assumption in
+the next homework.)"
+
+QUESTION: Can you describe the classes that you created?
+ANSWER: For the Building class:
+I created the fields required in the specifications. Next, I created a building constructor, which creates an elevator
+in the building and a new floor object for each floor in the building. Then, I had two instance variables (I guess they
+would be called methods?) that are called 'elevator' and 'floor;' the former returns elevator to the correct building
+and the latter returns the Floor object for the given floor number.
+
+For the Elevator class:
+I created the required fields and additional ones (I guess these would be requirements from Homework 1, like max floor,
+min floor, and direction). Next, the elevator constructor was formed, which records the building in a new field of
+Elevator. Then, were the methods: the passengers method returned the number of passengers that the Elevator can
+accommodate; the currentFloor method returned the elevator's current floor; the move method changes direction when the
+current floor is equal to the min or max floor--it also invokes the elevatorStop method when there are passenger
+requests on the current floor or when there are passengers waiting on the current floor of the building; the
+boardPassenger method boards a passenger who wants to ride to the indicated floor--it may board a single passenger and
+throw an ElevatorFullException if destination floor is verified and current capacity is greater than the capacity of
+the elevator minus 1 or else it prints an error message; the currentCapacity method returns the capacity of the elevator
+after looping; the floorCheck method returns a boolean value and is meant to bound the floor within the max and min
+floors; the elevatorStop method determines when to unload passengers on a current floor by using int floor and Boolean
+unload as parameters--it also utilizes 'try' for passenger method and 'catch' for ElevatorFullException method in while
+loop; and finally, the toString method returns floor, passenger, current floor, and current capacity information.
+
+For the ElevatorFullException class:
+Basically, the requirements stated "Elevator.boardPassenger(int destinationFloorNumber) is called when the Elevator
+stops on a Floor, some passengers leave, and the passengers waiting on that floor try to board. This code must catch
+the exception." That is what this class does by extending java.lang.Exception and using the keyword 'super.'
+
+For the Floor class:
+The required fields are created, including waitingPassengers, which will be called by the passengersWaiting method. So,
+the constructor was created to reference the current building and floor by passing building and floor as parameters.
+Next, the waitingPassengers method was created to return the number of passengers waiting on that floor for the
+elevator. Finally, the waitForElevator method increments the waitingPassengers variable and is called when a passenger
+on the Floor wants to wait for the Elevator; this should cause the Elevator to stop the next time it moves to the Floor.
+
+QUESTION: How can you execute the solution?
+ANSWER: I was able to successfully run jUnit4 tests within IntelliJ IDEA. But if you don't have an IDE...
+
+TYPICALLY, you would first go to your parent directory in the terminal. Then, you will want to compile it on
+the JVM and then run it on the JVM. You can would follow these commands respectively:
+
+javac src/cscie55/hw2/*.java (this compiles all java files in the cscie55.hw2 package)
+java -cp . test/cscie55.hw2test.HW2ElevatorSimulationTest (this creates a classpath to run the Elevator Simulation Test)
+
+IF you are using a jar file, then run this command:
+
+java -jar cscie55.hw2.jar (or whatever name the jar file ends up being)
+
+FOR HW2, the project directory is structured a bit differently AND we're using jUnit4, so execution will be a bit
+different. The example instructions given on a Mac are:
+
+java -classpath $CLASSPATH org.junit.runner.JUnitCore cscie55.hw2test.HW2ElevatorSimulationTest
+where CLASSPATH variable includes the following:
+full pathname to junit-4.11.jar, i.e. /Users/charliesawyer/java/junit-4.11.jar
+full pathname to hamcrest-core-1.3.jar, i.e. /Users/charliesawyer/java/hamcrest-core-1.3.jar
+full pathname to the parent directory of .class files for Elevator.class and other hw #2 classes,
+i.e. /Users/charliesawyer/java
+full pathname to the parent directory of HW2ElevatorSimulationTest.class, i.e. /Users/charliesawyer/java
+
+Source: https://courses.dce.harvard.edu/~cscie55/hw2-fall2017.html
+
+QUESTION: If for some reason you are submitting an incomplete solution, can you please explain what is missing or
+doesn't work in the submission?
+ANSWER: I don't think it's an incomplete solution. I'm having trouble setting the classpaths to run on the command line
+currently, but I hope to have solved that by the time I submit this.

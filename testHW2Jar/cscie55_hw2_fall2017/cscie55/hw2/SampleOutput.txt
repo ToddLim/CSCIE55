@@ -1,0 +1,74 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+25 September 2017
+
+HW2
+Sample Output
+
+
+***INTELLIJ IDEA's jUnit4***
+
+[Console: Run HW2ElevatorSimulationTest]
+
+/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java
+ -ea -Didea.test.cyclic.buffer.size=1048576 "-javaagent:
+ /Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51992:
+ /Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath
+  "/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar:
+  /Applications/IntelliJ IDEA CE.app/Contents/plugins/junit/lib/junit-rt.jar:
+  /Applications/IntelliJ IDEA CE.app/Contents/plugins/junit/lib/junit5-rt.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/charsets.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/deploy.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/dnsns.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/jaccess.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/localedata.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/nashorn.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunec.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/zipfs.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/javaws.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jce.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jfr.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jfxswt.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jsse.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/management-agent.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/plugin.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/resources.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ant-javafx.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/dt.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/javafx-mx.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/jconsole.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/packager.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/sa-jdi.jar:
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/tools.jar:
+  /Users/toddlim/IdeaProjects/CSCIE55_HW2_FALL2017/out/test/CSCIE55_HW2_FALL2017:
+  /Users/toddlim/IdeaProjects/CSCIE55_HW2_FALL2017/out/production/CSCIE55_HW2_FALL2017:
+  /Applications/IntelliJ IDEA CE.app/Contents/lib/junit-4.12.jar:
+  /Applications/IntelliJ IDEA CE.app/Contents/lib/hamcrest-core-1.3.jar"
+   com.intellij.rt.execution.junit.JUnitStarter -ideVersion5 -junit4
+    cscie55.hw2test.HW2ElevatorSimulationTest
+objc[18285]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java (0x1075c74c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x10768f4e0). One of the two will be used. Which one is undefined.
+
+Process finished with exit code 0
+
+
+HW2ElevatorSimulationTest (cscie55.hw2test) 2ms
+    elevatorFull 2ms
+    disembark 0ms
+    call 0ms
+    elevatorMotion 0ms
+
+(all tests aforementioned show green progress bars and check marks after compilation and run)
+
+[Event Log]
+9/21/17
+3:19 PM	Compilation completed successfully in 3s 628ms
+
+3:19 PM	All files are up-to-date
+
+3:19 PM	Tests Passed: 4 passed
