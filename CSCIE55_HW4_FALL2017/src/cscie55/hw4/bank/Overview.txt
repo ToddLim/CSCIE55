@@ -1,0 +1,78 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+23 October 2017
+
+HW4
+Overview - A text file describing your solution.
+
+Instructions:
+This does not need to be a 20 page design document but should include a description of how you solved the homework,
+any assumptions you made in the design, the classes that you created, and how to execute your solution. If for
+some reason you are submitting an incomplete solution please explain what is missing or doesn't work in the submission.
+
+
+***Responses***
+
+QUESTION: How did you solve the homework?
+ANSWER: First, we were provided code that contained two interfaces to be implemented (Account, Bank), two exception
+classes (DuplicateAccountException, InsufficientFundsException), and a JUnit test (Tester). Once I copied over the code
+to IntelliJ IDEA and set up the project structure, I began working on implementing the two classes (AccountImpl,
+BankImpl). Once I figured out how to implement the methods and fields, I began testing for performance variations
+among the three transfer methods. Please see description of classes for more information.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: Per the instructions, "You can assume that the methods addAccount, totalBalances and numberOfAccounts do not
+require synchronization." Other than that, the assumption that the provided code is sufficient to complete the
+assignment may be the only other one.
+
+QUESTION: Can you describe the classes that you created?
+ANSWER: Please see the descriptions below.
+
+For the AccountImpl class:
+The AccountImpl class implements the Account interface. It has two fields, 'balance' and 'id;' afterwards, it creates
+a constructor to initialize the object of type 'int.' Then, it implements four methods, the first of which are 'balance'
+and 'id,' which simply return the balance and id of an account. The last two methods are 'deposit' and 'withdraw.'
+While the former adds an amount to a balance with exception handling, the latter subtracts an amount from a balance
+with exception handling.
+
+For the BankImpl class:
+The BankImpl class implements the Bank interface. First, it creates a map of existingAccounts using a ConcurrentHashMap.
+Next, it implements 6 methods, the first being addAccount; the next three being transferWithoutLocking,
+transferLockingBank, and transferLockingAccounts; the last two being totalBalances and numberOfAccounts. The first
+method, addAccount, adds accounts to the hash map via id, if the account does not already exist; otherwise, it throws
+DuplicateAccountException. The transfer methods all use the parameters: (int fromId, int toId, long amount), as well as
+throwing InsufficientFundsException when attempting to withdraw x exceeds y from account (this is done when both the
+deposit and withdraw methods are called). The first of these methods, transferWithoutLocking, uses separate threads and
+consequently does not synchronize them. The second one, transferLockingBank, synchronizes the entire bank object but
+does not provide for concurrency. The third one, transferLockingAccounts, synchronizes the fromAccount and toAccount
+objects, which provides concurrency. Finally, totalBalances returns the total, or sum, of balances from several
+accounts, while numberOfAccounts returns the size, or number, of existingAccounts for a unique id.
+
+QUESTION: How can you execute the solution?
+ANSWER: Download the JAR files, and then run this command in the Terminal (be in the parent directory of files):
+
+java -cp hamcrest-core-1.3.jar:junit-4.12.jar:cscie55_hw4_fall2017.jar
+org.junit.runner.JUnitCore cscie55.hw4.Tester
+
+QUESTION: If for some reason you are submitting an incomplete solution, can you please explain what is missing or
+doesn't work in the submission?
+ANSWER: It should not be incomplete; therefore, no explanation of what is missing or improperly working is noted.
+
+ADDITIONAL QUESTIONS regarding testPerformance output:
+QUESTION 1. Why does the NO_LOCKING test succeed for one thread and fail for 2-20 threads? (It is possible that you
+will see some successes for larger number of threads. But if you see no failures, then something is amiss.)
+ANSWER: Initially, there shouldn't be any dependency for the first method call; however, after the initial method call,
+the balance in an account is going to depend on the previous iterations. Since an account can only be accessed by one
+thread at a time, if you don't synchronize properly, then you're going to have concurrency problems, where one thread
+may be trying to withdraw from an account that doesn't have the sufficient funds because of a concurrent thread that is
+withdrawing that same amount.
+
+QUESTION 2. How do you explain the change in performance for LOCK_BANK as threads increase from 1 to 20.
+ANSWER: This can be explained by the absence of concurrency. Though the bank object is synchronized, the performance
+slows down as threads increase from 1 to 20 because still only one thread can do the withdrawal or deposit at a time.
+
+QUESTION 3. How does the performance of LOCK_BANK compare to that of LOCK_ACCOUNTS? How do you explain this?
+ANSWER: Locking the bank performs less well than locking the accounts. This should be due to each thread spending less
+time on each lock, as well as the number of threads concurrently executing at a time. Synchronization of the methods is
+key here.
