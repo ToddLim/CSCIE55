@@ -1,0 +1,96 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+6 November 2017
+
+
+HW5
+OVERVIEW.TXT
+- A text file describing your solution.
+
+
+Instructions:
+This does not need to be a 20 page design document but should include a description of how you solved the homework,
+any assumptions you made in the design, the classes that you created, and how to execute your solution. If for
+some reason you are submitting an incomplete solution please explain what is missing or doesn't work in the submission.
+
+
+***Responses***
+
+QUESTION: How did you solve the homework?
+ANSWER:
+
+We were provided code that contained 7 Java classes (Account, Video, VideoException, VideoRental, VideoRentalTestRide,
+VideoStore, and VideoStoreUtils. 3 of these Java classes were to be unit tested, provided with test stubs via JUnit 4.
+
+First, I followed the instructions from the instructions on installing Maven and setting up a Maven project in my IDE,
+IntelliJ IDEA. Any questions I had were answered in Piazza; unfortunately, setting up Maven to work for this assignment
+was the longest part of completing this assignment, which is why it took me longer than usual to submit.
+
+Second, I went through the UML document and created the test stubs for each of the methods in the java classes for:
+Account, Video, and VideoRental in the JUnitTest classes. Then, I made sure to import the proper libraries; I also
+found out that because of the way the package directory is structured, I didn't have to import any of the individual
+classes to create objects of those classes and use their methods, so I'm guessing that is one of the advantages of
+using Maven.
+
+Third, I created tests to test the functionality of the code provided in the classes I was testing. Though I could've
+created tests specifically for the exception handling, I tried to integrate as much as I could into the unit tests I
+made for each method because of time constraints; consequently, isolating bugs was limited to just the unit tests.
+
+Finally, when I went through each of the unit tests, I made sure to document why I coded the programs that I did in
+order to provide readability and hopefully get some of my questions answered, like if I was on the right track.
+
+Please see description of classes for more information.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: I assumed that the three classes we needed to test had all the code necessary to write the unit tests. Though I
+looked at the other classes, like VideoStoreUtils, I did not think that we needed to incorporate any behavior in those
+classes into our unit tests, mainly because of the privacy of the fields. I also assumed we could delete rentals.App
+and rentals.AppTest, which were default Java files created from the Maven setup per instructions. I also assumed that
+isolating bugs was enough by unit testing each of the methods and that the exception handling could be inferred from
+the unit tests for the methods--there was just not enough time for me to do more tests. I actually tried to do a
+comprehensive test because I wanted to understand the code more, but it ended up costing me more time.
+
+QUESTION: Can you describe the classes that you created?
+ANSWER: Please see the descriptions below.
+
+For the AccountJUnitTest class:
+AccountJUnitTest class contains 18 test methods, each corresponding to methods for the Account class per the UML
+documentation. 3/18 tests failed: testGetOpenRentals, testGetClosedRentals, and testClearHistory. testGetOpenRentals
+failed for the following reason: assertTrue was used to assert that getOpenRentals method DID NOT yield the same values,
+given that the two account objects have not checked out any videos yet. testGetClosedRentals failed for the following
+reason: assertTrue was used to assert that getClosedRentals method DID NOT yield the same values, given that the two
+account objects have not checked out any videos yet. testClearHistory failed for the following reason: assertTrue was
+used to assert that the settleRental method followed by the clearHistory method would clear the closedRentals set and
+therefore DID NOT place it back in the openRentals set.
+
+For the VideoJUnitTest class:
+VideoJUnitTest class contains 13 test methods, each corresponding to methods for the Video class per the UML
+documentation. 1/13 tests failed: testRemoveFromStock. testRemoveFromStock failed for the following reason: assertTrue
+was used to assert that when video object called removeFromStock method, there would be a method that returned the
+OUT_OF_STOCK enum value; however, there was not and neither is it a public field.
+
+For the VideoRentalJUnitTest class:
+VideoRentalJUnitTest class contains 12 test methods, each corresponding to methods for the VideoRental class per the
+UML documentation. 5/12 tests failed: test2VideoRental, testGetVideo, testGetAccount, testRentalReturn, testIsOverDue.
+test2VideoRental failed for the following reason: assertEquals was used to assert that VideoRental constructor returned
+the local date from the getDateDue method, but it was not possible to pass in an object for the third parameter.
+testGetVideo failed for the following reason: assertEquals was used to assert that getVideo method returned just the
+Video title; instead, it also returned the year and availability. testGetAccount failed for the following reason:
+assertEquals was used to assert that getAccount method returned just the account name; instead, it returned the
+account's first name, last name, and email. testRentalReturn failed for the following reason: assertTrue was used to
+assert that after the rentalReturn method was called, the videorental would be open because the video would be checked
+in; however, this was not the case. testIsOverDue failed for the following reason: assertFalse was used to assert that
+isOverDue method yielded a false result when videorental object was created; however, this was not the case.
+
+For specifics on both pass and fail tests, please see the Java source files documentation.
+
+QUESTION: How can you execute the solution?
+ANSWER: Download the JAR files, and then run this command in the Terminal (be in the parent directory of files):
+
+java -cp hamcrest-core-1.3.jar:junit-4.12.jar:[name_of_jar].jar
+org.junit.runner.JUnitCore [name_of_test]
+
+QUESTION: If for some reason you are submitting an incomplete solution, can you please explain what is missing or
+doesn't work in the submission?
+ANSWER: It should not be incomplete; therefore, no explanation of what is missing or improperly working is noted.

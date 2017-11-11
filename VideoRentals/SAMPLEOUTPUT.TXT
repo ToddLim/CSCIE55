@@ -1,0 +1,60 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+6 November 2017
+
+
+HW5
+SAMPLEOUTPUT.TXT
+
+
+***INTELLIJ IDEA OUTPUT***
+Run: (!x3)AccountJUnitTest (rentals) 186ms
+        (Pass)testGetNumberOpenRentals 3ms
+        (Pass)testGetEmail 0ms
+        (Pass)testAccount 0ms
+        (Pass)testHasOpenRental 97ms
+        (Pass)testGetID 0ms
+        (Pass)testToString 0ms
+        (!)testGetOpenRentals 35ms
+        (Pass)testSettleRentals 0ms
+        (Pass)testGetNumberClosedRentals 0ms
+        (!)testGetClosedRentals 2ms
+        (Pass)testAddRental 0ms
+        (Pass)testHashCode 0ms
+        (Pass)test2SettleRental 12ms
+        (Pass)test1SettleRental 0ms
+        (Pass)testEquals 1ms
+        (Pass)testGetOverdueRentals 30ms
+        (!)testClearHistory 6ms
+        (Pass)testSetEmail 0ms
+
+Run: (!x1)VideoJUnitTest (rentals) 206ms
+        (Pass)testCheckOut 169ms
+        (Pass)testReplaceToStock 1ms
+        (Pass)testGetTitle 0ms
+        (Pass)testVideo 0ms
+        (Pass)testToString 0ms
+        (Pass)testCompareTo 0ms
+        (Pass)testGetYear 0ms
+        (Pass)testIsAvailable 0ms
+        (Pass)testCheckIn 0ms
+        (Pass)testHashCode 0ms
+        (Pass)testEquals 0ms
+        (Pass)testIsNotAvailable 0ms
+        (!)testRemoveFromStock 36ms
+
+Run: (!x5)VideoRentalJUnitTest (rentals) 219ms
+        (!)testGetVideo 187ms
+        (Pass)testToString 0ms
+        (!)testIsOverDue 1ms
+        (!)testGetAccount 3ms
+        (!)testRentalReturn 10ms
+        (Pass)testGetRentalPeriod 0ms
+        (Pass)testHashCode 0ms
+        (Pass)test1VideoRental 3ms
+        (Pass)testEquals 0ms
+        (!)test2VideoRental 9ms
+        (Pass)testIsOpen 0ms
+        (Pass)testGetDateDue 6ms
+
