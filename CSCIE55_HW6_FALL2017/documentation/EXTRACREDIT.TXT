@@ -1,0 +1,47 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+20 November 2017
+
+
+HW6
+EXTRACREDIT.TXT
+
+
+Instructions: Extra credit. Run your M/R app against HDFS; then catch the last ten lines sent by
+              $ hadoop fs -tail output/part-r-00000 | tail > hd.tail
+              Run your solution locally, and catch the final 10 lines from the output:
+              $ tail output/part-r-00000 > local.tail
+              Compare the local vs. HDFS results.
+              $ diff hd.tail local.tail
+
+Description:
+Upon following the instructions, there is no difference in output from running the M/R app, WordHistogram, on either
+HDFS or locally. The last ten lines from the HDFS output match the local output. You can also find the JAR file I used
+in CSCIE55_HW6_FALL2017/; it is called 'WordHistogram.jar'. Please see below for more information on results.
+
+
+Output:
+***CSCIE55_HW6_FALL2017/output/WordHistogram_Results/hd.tail***
+27	1
+3	45341
+31	1
+35	1
+4	37082
+5	26500
+6	18548
+7	15193
+8	10744
+9	7704
+
+***CSCIE55_HW6_FALL2017/output/WordHistogram_Results/local.tail***
+27	1
+3	45341
+31	1
+35	1
+4	37082
+5	26500
+6	18548
+7	15193
+8	10744
+9	7704

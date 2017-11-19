@@ -1,0 +1,83 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+20 November 2017
+
+
+HW6
+SAMPLEOUTPUT.TXT
+
+
+***PROBLEM 1***
+CSCIE55_HW6_FALL2017/output/WordHistogram_Results/part-r-00000
+
+1	6358
+10	5101
+11	2870
+12	1779
+13	1181
+14	554
+15	294
+16	170
+17	77
+18	52
+19	28
+2	32403
+20	22
+21	9
+22	9
+23	2
+24	4
+25	3
+26	1
+27	1
+3	45341
+31	1
+35	1
+4	37082
+5	26500
+6	18548
+7	15193
+8	10744
+9	7704
+
+***PROBLEM 2***
+CSCIE55_HW6_FALL2017/output/WordCountByFile_Results/part-r-00000
+
+ad	fleas2.txt: 1
+
+and	fleas2.txt: 2
+
+backs	fleas1.txt: 1
+
+betwixt	fleas3.txt: 1
+
+bite	fleas1.txt: 1
+
+finitum	fleas2.txt: 1
+
+fleas	fleas2.txt: 1, fleas3.txt: 2, fleas1.txt: 2
+
+great	fleas1.txt: 1
+
+have	fleas1.txt: 1, fleas2.txt: 1, fleas3.txt: 1
+
+lesser	fleas2.txt: 1
+
+little	fleas2.txt: 1, fleas1.txt: 1
+
+many	fleas3.txt: 2
+
+on	fleas2.txt: 1
+
+so	fleas2.txt: 1
+
+still	fleas2.txt: 1
+
+their	fleas1.txt: 1
+
+them	fleas1.txt: 1, fleas3.txt: 1
+
+to	fleas1.txt: 1
+
+upon	fleas1.txt: 1
