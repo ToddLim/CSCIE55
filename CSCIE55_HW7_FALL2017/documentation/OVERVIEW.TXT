@@ -1,0 +1,83 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+4 December 2017
+
+
+HW7
+OVERVIEW.TXT
+- A text file describing your solution.
+
+
+Instructions:
+This does not need to be a 20 page design document but should include a description of how you solved the homework,
+any assumptions you made in the design, the classes that you created, and how to execute your solution. If for
+some reason you are submitting an incomplete solution please explain what is missing or doesn't work in the submission.
+
+
+***Responses***
+
+QUESTION: How did you solve the homework?
+ANSWER: I was able to complete Problem 1 shortly after finishing HW6; however, Thanksgiving break gave me only the
+weekend before the due date to catch up on 6+ Lecture/Section Videos, so I am still struggling with the Java 8
+implementation.
+
+Nevertheless, I forked over WordCount.java and read through Link.java to understand how to parse it. Then, I adapted,
+much like in HW6, the java code for the specific implementation. Though I had attempted to work with Java 8 features
+for Problem 2, I ended up having to restart my implementations until finally I just ran out of time, so I stuck with
+the Hadoop implementation to finish the 'new feature' part of Problem 2.
+
+After I had my solutions working, I went in and created the comments and documentation.
+
+Please see description of classes for more information.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: I did not intentionally make any assumptions in the design.
+
+QUESTION: Can you describe the classes that you created?
+ANSWER: Please see the descriptions below.
+
+For the UrlTagIndex class:
+UrlTagIndex was forked from WordCount. I changed the class names when appropriate from WordCount to UrlTagIndex.
+
+In the map subclass, I created a link object from the Link class that parses the value of toString; also, set an
+if-condition for non-null values that will set the link url; simply iterate with for-loop.
+
+In the reduce subclass, I changed Iterable values from <IntWritable> value to <Text> for the initial parameters. Next,
+initialize tagSet from HashSet with type, <String>, and then iterate over the tag values with a for-loop so that it
+adds the the values to the toString invoked by tag. Then, implement outString using StringBuilder and set the 'first'
+field to equal true. Finally, iterate the tags over the tagSet to append a comma delimiter when appropriate."
+
+For the LinkStreamer class:
+LinkStreamer was forked from WordCount. I changed the class names when appropriate from WordCount to LinkStreamer.
+
+I created a new method called getMillisecondsFromDateString, which utilized the suggested Java date APIs, in order to
+convert the format to milliseconds to standardize comparisons.
+
+In the map subclass, I created long objects, start and end, which are getters for the Configuration values. Next,
+iterate over the tokens to parse them as Link objects. Next, use conditional if-statements for quality control.
+
+In the reduce subclass, I kept the initial configuration from WordCount.
+
+QUESTION: How can you execute the solution?
+ANSWER: Download the JAR files, and then run this command in the Terminal (be in the parent directory of files):
+
+java -classpath $CLASSPATH cscie55.hw7.UrlTagIndex
+java -classpath $CLASSPATH cscie55.hw7.LinkStreamer
+
+Please set your program arguments correctly as well.
+
+For UrlTagIndex, mine is:
+/Users/toddlim/IdeaProjects/CSCIE55_HW7_FALL2017/input/files.1/*
+/Users/toddlim/IdeaProjects/CSCIE55_HW7_FALL2017/output/Problem1_Results
+
+For LinkStreamer, mine is:
+/Users/toddlim/IdeaProjects/CSCIE55_HW7_FALL2017/input/files.1/*
+/Users/toddlim/IdeaProjects/CSCIE55_HW7_FALL2017/output/Problem2_Results
+
+QUESTION: If for some reason you are submitting an incomplete solution, can you please explain what is missing or
+doesn't work in the submission?
+ANSWER: It may be considered incomplete, but I had trouble learning and applying Java 8 in one weekend, so I stuck with
+a Hadoop implementation for Problem 2 in order to properly add the new feature that counts occurrences of each URL
+between a range of dates when given on the command line. It's unfortunate that Thanksgiving break happened during this
+assignment, but I should be able to catch up to speed by HW#8 on Java 8 features.
