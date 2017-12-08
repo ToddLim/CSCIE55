@@ -1,0 +1,43 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+18 December 2017
+
+
+HW8
+SAMPLEOUTPUT.TXT
+
+
+***PROBLEM 1***
+(Expected)
+Stella, Belgium, 7.75
+Leffe Blonde, Belgium, 8.75
+Chimay Blue, Belgium, 10.00
+=====
+Stella, Belgium, 7.75
+Leffe Blonde, Belgium, 8.75
+Chimay Blue, Belgium, 10.00
+Brooklyn Lager, USA, 8.25
+
+
+***PROBLEM 2 (Extra Credit)***
+dinner,endrin
+bedel,bleed
+dunite,united
+rident,tinder
+driven,verdin
+backfire,fireback
+inelastic,sciential
+concenter,concentre
+painter,pertain
+panties,sapient
+broadside,sideboard
+fakery,freaky
+stickler,strickle
+editor,triode
+midden,minded
+per-,pre-
+cotillion,octillion
+cane sugar,sugar cane
+ribbon,robbin
+headmaster,headstream

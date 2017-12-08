@@ -1,0 +1,71 @@
+Todd Lim
+Professor Sawyer
+CSCI E-55
+18 December 2017
+
+
+HW8
+OVERVIEW.TXT
+- A text file describing your solution.
+
+
+Instructions:
+This does not need to be a 20 page design document but should include a description of how you solved the homework,
+any assumptions you made in the design, the classes that you created, and how to execute your solution. If for
+some reason you are submitting an incomplete solution please explain what is missing or doesn't work in the submission.
+
+
+***Responses***
+
+QUESTION: How did you solve the homework?
+ANSWER: I first watched the lecture and section videos regarding Java 8, and then I reviewed the java8 resources that
+included a BeerStreams.java, which I tried to draw solutions for algorithms from. I attempted to complete Problem 1's
+BeerFest.java by filling in the code for the //toodoo comments, but at this point, it looks more like pseudocode. While
+I had encountered difficulty with applying some of the concepts here, I moved on to Problem 2's Anagrams.java, where I
+had more success.
+
+Please see description of classes for more information.
+
+QUESTION: What assumptions, if any, did you make in the design?
+ANSWER: I did not intentionally make any assumptions in the design.
+
+QUESTION: Can you describe the classes that you created?
+ANSWER: Please see the descriptions below.
+
+For the cscie55.hw8.BeerFest class:
+The BeerQuery lambda was supposed used to filter beer records that started with the character given, in this case, "S."
+Unfortunately, invoking a filter(), forEach() and exception did not work for me.
+
+The PriceRangeQuery lambda was supposed to filter beer records that were within a price range, in this case, < 7.00f.
+Unfortunately, invoking a map(), filter(), forEach() and exception did not work for me.
+
+The CountryQuery lambda was supposed to filter through countries that started with a certain character, in this case,
+"B." Unfortunately, invoking a map(), filter(), forEach() and exception did not work for me.
+
+The main method was supposed to run the beerQuery method, taking the countryQuery as one parameter and priceRangeQuery
+method as another parameter. I attempted to test "Belgium" for countryQuery and y >= 7.50f for the priceRangeQuery.
+Unfortunately, the queries proved unsuccessful. Therefore, in order to package a JAR, I had to comment out the code
+that was not working properly.
+
+For the cscie55.hw8.Anagrams class:
+I first created two private final static Strings called FILE_CHARSET and FILE_NAME that are set to "ISO-8859-1" and
+"anagram-data.txt" respectively. The first method is the main() method , which creates an object called 'path' that
+gets the FILE_NAME. Then, it implements try-catch exception handling for IOExceptions in the stream. Finally, it prints
+the stream using a forEach loop, and return the stack trace for IOExceptions.
+
+There are also two lambdas: getMultipleJoinedStrings and getSortedCharacters. The getMultipledJoinedStrings lambda
+invokes filter() from stream() from entrySet() from groupedStrings List. Then, it calls map() to concatenate anagrams
+with a "," delimiter. The getSortedCharacters lambda invokes mapToObj() from sorted() from chars() from word String.
+
+QUESTION: How can you execute the solution?
+ANSWER: Download the JAR files, and then run this command in the Terminal (be in the parent directory of files):
+
+java -classpath $CLASSPATH cscie55.hw8.cscie55.hw8.BeerFest
+java -classpath $CLASSPATH cscie55.hw8.cscie55.hw8.Anagrams
+
+Please set your program arguments correctly as well, though it was not used in my case.
+
+QUESTION: If for some reason you are submitting an incomplete solution, can you please explain what is missing or
+doesn't work in the submission?
+ANSWER: Problem 1's BeerFest.java seemed to stymie my efforts, which caused me to comment out the code that wasn't
+working in order to package a JAR file. Problem 2's Anagrams.java seems to be working, however.
